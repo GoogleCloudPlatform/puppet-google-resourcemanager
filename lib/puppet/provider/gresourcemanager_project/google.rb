@@ -204,10 +204,10 @@ Puppet::Type.type(:gresourcemanager_project).provide(:google) do
     return if response.is_a?(Net::HTTPNoContent)
     # TODO(nelsonjr): Remove return of Net::HTTPForbidden from
     # return_if_object once Cloud SQL bug http://b/62635365 is resolved.
-    # Currently the API returns 403 for objects that do not exist, even when
-    # the user has access to the project. This is being changed to return
-    # 404 as it is supposed to be.  Once 404 is the correct response the
-    # temporary workaround should be removed.
+    # Currently the API returns 403 for objects that do not exist, even
+    # when the user has access to the project. This is being changed to
+    # return 404 as it is supposed to be.  Once 404 is the correct
+    # response the temporary workaround should be removed.
     return if response.is_a?(Net::HTTPForbidden)
     result = JSON.parse(response.body)
     raise_if_errors result, %w[error errors], 'message'
