@@ -1,4 +1,4 @@
-# Copyright 2017 Google Inc.
+# Copyright 2018 Google Inc.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -30,7 +30,7 @@ require 'google/resourcemanager/property/base'
 module Google
   module Resourcemanager
     module Data
-      # A class to manage data for parent for project.
+      # A class to manage data for Parent for project.
       class ProjectParent
         include Comparable
 
@@ -103,7 +103,7 @@ module Google
     end
 
     module Property
-      # A class to manage input to parent for project.
+      # A class to manage input to Parent for project.
       class ProjectParent < Google::Resourcemanager::Property::Base
         # Used for parsing Puppet catalog
         def unsafe_munge(value)
