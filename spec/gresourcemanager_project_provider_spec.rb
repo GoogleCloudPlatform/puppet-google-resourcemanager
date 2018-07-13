@@ -116,18 +116,11 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
               end
 
               it { is_expected.to have_attributes(number: 1_692_438_494) }
-              it do
-                is_expected
-                  .to have_attributes(
-                    lifecycle_state: 'LIFECYCLE_STATE_UNSPECIFIED'
-                  )
-              end
+              it { is_expected.to have_attributes(lifecycle_state: 'LIFECYCLE_STATE_UNSPECIFIED') }
               it { is_expected.to have_attributes(name: 'title0') }
               it do
                 is_expected
-                  .to have_attributes(
-                    create_time: ::Time.parse('2026-01-08T17:18:36+00:00')
-                  )
+                  .to have_attributes(create_time: ::Time.parse('2026-01-08T17:18:36+00:00'))
               end
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -149,9 +142,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
               it { is_expected.to have_attributes(name: 'title1') }
               it do
                 is_expected
-                  .to have_attributes(
-                    create_time: ::Time.parse('2082-01-16T10:37:12+00:00')
-                  )
+                  .to have_attributes(create_time: ::Time.parse('2082-01-16T10:37:12+00:00'))
               end
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -169,16 +160,11 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
               end
 
               it { is_expected.to have_attributes(number: 5_077_315_484) }
-              it do
-                is_expected
-                  .to have_attributes(lifecycle_state: 'DELETE_REQUESTED')
-              end
+              it { is_expected.to have_attributes(lifecycle_state: 'DELETE_REQUESTED') }
               it { is_expected.to have_attributes(name: 'title2') }
               it do
                 is_expected
-                  .to have_attributes(
-                    create_time: ::Time.parse('2138-01-25T03:55:48+00:00')
-                  )
+                  .to have_attributes(create_time: ::Time.parse('2138-01-25T03:55:48+00:00'))
               end
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -275,18 +261,11 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
               end
 
               it { is_expected.to have_attributes(number: 1_692_438_494) }
-              it do
-                is_expected
-                  .to have_attributes(
-                    lifecycle_state: 'LIFECYCLE_STATE_UNSPECIFIED'
-                  )
-              end
+              it { is_expected.to have_attributes(lifecycle_state: 'LIFECYCLE_STATE_UNSPECIFIED') }
               it { is_expected.to have_attributes(name: 'test name#0 data') }
               it do
                 is_expected
-                  .to have_attributes(
-                    create_time: ::Time.parse('2026-01-08T17:18:36+00:00')
-                  )
+                  .to have_attributes(create_time: ::Time.parse('2026-01-08T17:18:36+00:00'))
               end
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -308,9 +287,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
               it { is_expected.to have_attributes(name: 'test name#1 data') }
               it do
                 is_expected
-                  .to have_attributes(
-                    create_time: ::Time.parse('2082-01-16T10:37:12+00:00')
-                  )
+                  .to have_attributes(create_time: ::Time.parse('2082-01-16T10:37:12+00:00'))
               end
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -328,16 +305,11 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
               end
 
               it { is_expected.to have_attributes(number: 5_077_315_484) }
-              it do
-                is_expected
-                  .to have_attributes(lifecycle_state: 'DELETE_REQUESTED')
-              end
+              it { is_expected.to have_attributes(lifecycle_state: 'DELETE_REQUESTED') }
               it { is_expected.to have_attributes(name: 'test name#2 data') }
               it do
                 is_expected
-                  .to have_attributes(
-                    create_time: ::Time.parse('2138-01-25T03:55:48+00:00')
-                  )
+                  .to have_attributes(create_time: ::Time.parse('2138-01-25T03:55:48+00:00'))
               end
               # TODO(nelsonjr): Implement complex namevalues property test.
               # it 'labels' do
@@ -435,8 +407,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 credential => 'cred0',
               }
               MANIFEST
-            ).catalog.resource('Gresourcemanager_project[title0]').provider
-              .ensure
+            ).catalog.resource('Gresourcemanager_project[title0]').provider.ensure
           end
 
           it { is_expected.to eq :present }
@@ -489,8 +460,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 credential => 'cred0',
               }
               MANIFEST
-            ).catalog.resource('Gresourcemanager_project[title0]').provider
-              .ensure
+            ).catalog.resource('Gresourcemanager_project[title0]').provider.ensure
           end
 
           it { is_expected.to eq :present }
