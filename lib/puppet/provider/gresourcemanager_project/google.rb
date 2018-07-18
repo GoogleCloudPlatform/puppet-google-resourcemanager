@@ -67,21 +67,12 @@ Puppet::Type.type(:gresourcemanager_project).provide(:google) do
 
   def self.fetch_to_hash(fetch)
     {
-      number: Google::Resourcemanager::Property::Integer.api_munge(
-        fetch['projectNumber']
-      ),
-      lifecycle_state: Google::Resourcemanager::Property::Enum.api_munge(
-        fetch['lifecycleState']
-      ),
+      number: Google::Resourcemanager::Property::Integer.api_munge(fetch['projectNumber']),
+      lifecycle_state: Google::Resourcemanager::Property::Enum.api_munge(fetch['lifecycleState']),
       name: Google::Resourcemanager::Property::String.api_munge(fetch['name']),
-      create_time:
-        Google::Resourcemanager::Property::Time.api_munge(fetch['createTime']),
-      labels: Google::Resourcemanager::Property::NameValues.api_munge(
-        fetch['labels']
-      ),
-      parent: Google::Resourcemanager::Property::ProjectParent.api_munge(
-        fetch['parent']
-      )
+      create_time: Google::Resourcemanager::Property::Time.api_munge(fetch['createTime']),
+      labels: Google::Resourcemanager::Property::NameValues.api_munge(fetch['labels']),
+      parent: Google::Resourcemanager::Property::ProjectParent.api_munge(fetch['parent'])
     }.reject { |_, v| v.nil? }
   end
 

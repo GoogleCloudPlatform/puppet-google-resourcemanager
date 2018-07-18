@@ -84,8 +84,7 @@ module Google
       # Data is coming from the GCP API
       class ProjectParentApi < ProjectParent
         def initialize(args)
-          @type =
-            Google::Resourcemanager::Property::String.api_munge(args['type'])
+          @type = Google::Resourcemanager::Property::String.api_munge(args['type'])
           @id = Google::Resourcemanager::Property::String.api_munge(args['id'])
         end
       end
@@ -94,10 +93,8 @@ module Google
       # Data is coming from the Puppet manifest
       class ProjectParentCatalog < ProjectParent
         def initialize(args)
-          @type =
-            Google::Resourcemanager::Property::String.unsafe_munge(args['type'])
-          @id =
-            Google::Resourcemanager::Property::String.unsafe_munge(args['id'])
+          @type = Google::Resourcemanager::Property::String.unsafe_munge(args['type'])
+          @id = Google::Resourcemanager::Property::String.unsafe_munge(args['id'])
         end
       end
     end

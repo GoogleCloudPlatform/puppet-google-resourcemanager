@@ -38,9 +38,7 @@ describe Google::Resourcemanager::Network::Delete do
   let(:uri) { Google::Resourcemanager::NetworkBlocker::ALLOWED_TEST_URI }
 
   context 'verify proper request' do
-    before(:each) do
-      Google::Resourcemanager::NetworkBlocker.instance.allow_delete(uri)
-    end
+    before(:each) { Google::Resourcemanager::NetworkBlocker.instance.allow_delete(uri) }
 
     subject { described_class.new(uri, credential).send }
 
