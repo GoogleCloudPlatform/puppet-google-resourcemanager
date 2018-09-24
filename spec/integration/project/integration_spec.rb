@@ -24,25 +24,36 @@
 #     CONTRIBUTING.md located at the root of this package.
 #
 # ----------------------------------------------------------------------------
+require 'spec_helper'
+require 'vcr'
 
-source 'https://rubygems.org'
-group :test do
-  gem 'google-api-client'
-  gem 'googleauth'
-  gem 'metadata-json-lint'
-  gem 'parallel_tests'
-  gem 'puppet', ENV['PUPPET_GEM_VERSION'] || '>= 4.2.0'
-  gem 'puppet-lint'
-  gem 'puppet-lint-unquoted_string-check'
-  gem 'puppet-syntax'
-  gem 'puppetlabs_spec_helper'
-  gem 'rake', '~> 10.0'
-  gem 'rspec'
-  gem 'rspec-mocks'
-  gem 'rspec-puppet'
-  gem 'rubocop'
-  gem 'semantic_puppet'
-  gem 'simplecov'
-  gem 'vcr'
-  gem 'webmock'
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
+
+describe 'project.create', vcr: true do
+  it 'creates and destroys non-existent project' do
+    puts 'pre-destroying project'
+    VCR.use_cassette('pre_destroy_project') do
+      run_example('delete_project')
+    end
+    puts 'creating project'
+    VCR.use_cassette('create_project') do
+      run_example('project')
+    end
+    puts 'checking that project is created'
+    VCR.use_cassette('check_project') do
+      validate_no_flush_calls('project')
+    end
+    puts 'destroying project'
+    VCR.use_cassette('destroy_project') do
+      run_example('delete_project')
+    end
+    puts 'confirming project destroyed'
+    VCR.use_cassette('check_destroy_project') do
+      validate_no_flush_calls('delete_project')
+    end
+  end
 end
