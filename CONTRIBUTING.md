@@ -100,7 +100,7 @@ puppet-codegen:
   * lib/google/resourcemanager/property/base.rb
   * lib/google/resourcemanager/property/enum.rb
   * lib/google/resourcemanager/property/integer.rb
-  * lib/google/resourcemanager/property/namevalues.rb
+  * lib/google/resourcemanager/property/keyvaluepairs.rb
   * lib/google/resourcemanager/property/project_parent.rb
   * lib/google/resourcemanager/property/string.rb
   * lib/google/resourcemanager/property/time.rb

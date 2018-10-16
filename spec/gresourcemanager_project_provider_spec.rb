@@ -122,7 +122,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 is_expected
                   .to have_attributes(create_time: ::Time.parse('2026-01-08T17:18:36+00:00'))
               end
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -144,7 +144,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 is_expected
                   .to have_attributes(create_time: ::Time.parse('2082-01-16T10:37:12+00:00'))
               end
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -166,7 +166,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 is_expected
                   .to have_attributes(create_time: ::Time.parse('2138-01-25T03:55:48+00:00'))
               end
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -267,7 +267,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 is_expected
                   .to have_attributes(create_time: ::Time.parse('2026-01-08T17:18:36+00:00'))
               end
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -289,7 +289,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 is_expected
                   .to have_attributes(create_time: ::Time.parse('2082-01-16T10:37:12+00:00'))
               end
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end
@@ -311,7 +311,7 @@ describe Puppet::Type.type(:gresourcemanager_project).provider(:google) do
                 is_expected
                   .to have_attributes(create_time: ::Time.parse('2138-01-25T03:55:48+00:00'))
               end
-              # TODO(nelsonjr): Implement complex namevalues property test.
+              # TODO(alexstephen): Implement keyvaluepairs test.
               # it 'labels' do
               #   # Add test code here
               # end

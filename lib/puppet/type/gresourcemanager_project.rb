@@ -27,7 +27,7 @@
 
 require 'google/resourcemanager/property/enum'
 require 'google/resourcemanager/property/integer'
-require 'google/resourcemanager/property/namevalues'
+require 'google/resourcemanager/property/keyvaluepairs'
 require 'google/resourcemanager/property/project_parent'
 require 'google/resourcemanager/property/string'
 require 'google/resourcemanager/property/time'
@@ -94,7 +94,7 @@ Puppet::Type.newtype(:gresourcemanager_project) do
     desc 'Time of creation (output only)'
   end
 
-  newproperty(:labels, parent: Google::Resourcemanager::Property::NameValues) do
+  newproperty(:labels, parent: Google::Resourcemanager::Property::KeyValuePairs) do
     desc <<-DOC
       The labels associated with this Project. Label keys must be between 1 and 63 characters long
       and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`. Label

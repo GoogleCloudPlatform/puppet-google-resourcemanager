@@ -32,7 +32,7 @@ require 'google/resourcemanager/network/post'
 require 'google/resourcemanager/network/put'
 require 'google/resourcemanager/property/enum'
 require 'google/resourcemanager/property/integer'
-require 'google/resourcemanager/property/namevalues'
+require 'google/resourcemanager/property/keyvaluepairs'
 require 'google/resourcemanager/property/project_parent'
 require 'google/resourcemanager/property/string'
 require 'google/resourcemanager/property/time'
@@ -71,7 +71,7 @@ Puppet::Type.type(:gresourcemanager_project).provide(:google) do
       lifecycle_state: Google::Resourcemanager::Property::Enum.api_munge(fetch['lifecycleState']),
       name: Google::Resourcemanager::Property::String.api_munge(fetch['name']),
       create_time: Google::Resourcemanager::Property::Time.api_munge(fetch['createTime']),
-      labels: Google::Resourcemanager::Property::NameValues.api_munge(fetch['labels']),
+      labels: Google::Resourcemanager::Property::KeyValuePairs.api_munge(fetch['labels']),
       parent: Google::Resourcemanager::Property::ProjectParent.api_munge(fetch['parent'])
     }.reject { |_, v| v.nil? }
   end

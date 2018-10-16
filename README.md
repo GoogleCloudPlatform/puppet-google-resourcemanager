@@ -130,7 +130,7 @@ gresourcemanager_project { 'My Sample Project':
 gresourcemanager_project { 'id-of-resource':
   create_time     => time,
   id              => string,
-  labels          => namevalues,
+  labels          => keyvaluepairs,
   lifecycle_state => 'LIFECYCLE_STATE_UNSPECIFIED', 'ACTIVE', 'DELETE_REQUESTED' or 'DELETE_IN_PROGRESS',
   name            => string,
   number          => integer,

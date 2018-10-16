@@ -31,7 +31,7 @@ module Google
   module Resourcemanager
     module Property
       # A Puppet property that holds a string
-      class NameValues < Google::Resourcemanager::Property::Base
+      class KeyValuePairs < Google::Resourcemanager::Property::Base
         def self.api_munge(value)
           return if value.nil?
           value
